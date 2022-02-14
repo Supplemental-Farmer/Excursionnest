@@ -1,0 +1,26 @@
+body{
+	height: 100%;
+    background: url("Pictures/back5.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+.container {
+    background-color:transparent !important;
+}
+.form-control{
+    width: fit-content;
+    height: 60%;
+}
+.label{
+   text-emphasis-color: brown;
+} 
+.jumbotron{
+    position: relative;
+    top: 0px;
+    padding-top: 110px;
+    height: 240px;
+    background-color:transparent !important;
+}

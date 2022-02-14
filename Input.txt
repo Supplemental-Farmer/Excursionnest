@@ -1,0 +1,7 @@
+Serial No	Departure From	Departure Time	Destination	Return Time	Hotel Name	Cost	Others
+1	Dhaka	2022-02-15	Bandarban	2022-02-17	Hotel Chimbuk	3500	Meal 3 times, Guide all day
+2	Dhaka	2022-02-16	Cox Bazar	2022-02-18	Hotel Seagull	5000	Meal 3 times a day
+3	Dhaka	2022-02-20	Bichanakandi	2022-02-21	Local Hotel (Any)	1500	Meal 2 times
+4	Dhaka	2022-02-19	Kuakata		2022-02-22	Hotel Seaside	6000	Meal 3 times a day
+5	Dhaka	2022-02-22	Napittachhora	2022-02-25	Tents	4000	Meal 2 times, Guide all day
+6	Dhaka	2022-02-25	Cox Bazar	2022-02-27	A Resort near Beach	8000	Parasailing, Meal All day

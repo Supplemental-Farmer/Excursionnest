@@ -1,6 +1,13 @@
 <?php
 require 'config.php';
-
+if(!empty($_SESSION["id"])){
+  $m = $_SESSION["id"];
+  $result = mysqli_query($conn,"SELECT * from user where mail= '$m'");
+  $row = mysqli_fetch_assoc($result);
+}
+else{
+  header("Location: User_Login.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

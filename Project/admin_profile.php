@@ -28,7 +28,7 @@
           <div id="home" class="tab-pane fade in active">
             <h3>Upcoming Trips</h3>
 
-            <div class="row ">
+        <div class="row ">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 ">
         <div class="card">
         <div align ="left">

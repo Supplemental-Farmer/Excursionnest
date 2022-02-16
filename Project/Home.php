@@ -13,6 +13,12 @@
 
     <link rel="stylesheet" type="text/css" href="style.css">
 
+    <style>
+        .card:hover{
+            box-shadow: 6px 12px 6px aqua;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -81,11 +87,7 @@
                             foreach ($query_run as $items) {
                     ?>
 
-<div class="card" style="margin-top: 10px;">
-                <div class="card-body">
-                                <div class="row mt-4"></div>
-
-                                <div class="col-md-3">
+                                <div class="col-md-3" >
                                     <div class="box-container">
                                         <div class="card" align="center" style="margin-bottom: 15px;">
                                             <img src="<?php echo $items['Pic'] ?>" height="200px" alt="">

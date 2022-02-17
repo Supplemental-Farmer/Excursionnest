@@ -76,14 +76,6 @@ if(isset($_POST["update"])){
                 <input type="text" name="updatedname" class="form-control" value="<?php echo $row["Name"];?>">  
                 </td>
               </tr>
-              <!-- <tr align="center">
-                <td>
-                <label class ="label" for="updatedmail">Email:</label>
-                </td>
-                <td>
-                <input type="email" name="updatedmail" class="form-control" value="<?php echo $row['mail'];?>">
-                </td>
-              </tr> -->
 
               <tr align="center">
                 <td>

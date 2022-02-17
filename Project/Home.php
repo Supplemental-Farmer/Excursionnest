@@ -72,7 +72,7 @@
     </div>
     <div class="row mx-3 my-5">
         <div class="col-xs-1 col-sm-1 col-md-2 col-lg-2"></div>
-        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
 
 
@@ -88,7 +88,7 @@
 
                                 <div class="col-md-3" >
                                     <div class="box-container">
-                                        <div class="card" align="center" style="margin-bottom: 15px;">
+                                        <div class="card"style="margin-bottom: 15px;">
                                             <img src="<?php echo $items['Pic'] ?>" height="200px" alt="">
                                             <div align="center">
                                                 <h3  style="margin-top: 10px;"><i class="	fa fa-map-marker"></i> <?php echo $items['togo'] ?></h3>

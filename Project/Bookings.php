@@ -20,6 +20,7 @@ else{
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" ></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -70,7 +71,53 @@ else{
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
               </div>
-              <a href="#" class="btn btn-success" style="margin-bottom: 8px;"><h3 >Book Now</h3></a>
+  
+  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#mymodal<?php echo $row['NUM']?>">
+    Book Now
+  </button>
+
+
+<div class="modal" id="mymodal<?php echo $row['NUM']?>">
+<div class="modal-dialog modal-md">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+      <img src="<?php echo $row['Pic']?>" width= 100% height = 100%>
+      <div align ="center">
+        <form action="signup.php" method="post">
+            <div class="form-group">
+                <label class ="label" for="person">Persons:</label>
+                <input type="number" class="form-control" id="person" placeholder="Enter Total Persons" name="person" required>
+              </div>
+              <div class="form-group">
+                <label  class ="label" for="req">Special Requirements:</label>
+                <input type="text" class="form-control" id="req" placeholder="Enter your requirements" 
+                name="req" >
+              </div>
+          <button type="submit" class="btn btn-primary">Check out</button>
+        </form>
+
+
+      </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Book</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
               </div>
               
             </div>

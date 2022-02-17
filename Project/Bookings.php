@@ -4,6 +4,8 @@ if(!empty($_SESSION["id"])){
   $m = $_SESSION["id"];
   $result = mysqli_query($conn,"SELECT * from user where mail= '$m'");
   $row = mysqli_fetch_assoc($result);
+  $person = $row["Name"];
+  $number = $row["Phone"];
 }
 else{
   header("Location: User_Login.php");
@@ -26,6 +28,7 @@ else{
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script src="jquery-3.4.1.min.js"></script>
   <link rel="stylesheet" type="text/css" href="styles.css">
+  
 </head>
 
 <body style="color: coral;">
@@ -62,7 +65,6 @@ else{
               <h5 style="margin: 0px;">Journey Starts on: <?php echo $row['StartD']?></h5> <br>
               <h5 style="margin: 0px;">Journey Ends on: <?php echo $row['EndIng']?></h5> <br>
               <h4 style="margin: 0px;">Stayover At: <b> <?php echo $row['HOTEL']?> </b> </h4><br>
-              <div class="price"> <h4><?php echo $row['COST']?> BDT Per Person</h4>   </div> <br>
               <h5><?php echo $row['Others']?></h5>
               <div class="stars" style="margin-bottom: 8px;">
                 <i class="fas fa-star"></i>
@@ -83,34 +85,79 @@ else{
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title">Modal Heading</h4>
+        <h4 class="modal-title" align="center"><?php echo $row['StartP']."-".$row['togo']?></h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 
       <!-- Modal body -->
       <div class="modal-body">
       <img src="<?php echo $row['Pic']?>" width= 100% height = 100%>
-      <div align ="center">
-        <form action="signup.php" method="post">
-            <div class="form-group">
-                <label class ="label" for="person">Persons:</label>
-                <input type="number" class="form-control" id="person" placeholder="Enter Total Persons" name="person" required>
-              </div>
-              <div class="form-group">
-                <label  class ="label" for="req">Special Requirements:</label>
-                <input type="text" class="form-control" id="req" placeholder="Enter your requirements" 
-                name="req" >
-              </div>
-          <button type="submit" class="btn btn-primary">Check out</button>
-        </form>
+      <div>
+        <form action="insertbook.php" method="post">
+          <table style="margin: 15px;">
+            <tr>
+              <td>
+                <label class ="label" for="person" style="color: black;" >Persons:</label>
+              </td>
+              <td>
+              <input type="number" min = '1' class="form-control" id="person" placeholder="Enter Total Persons" name="person" required>
+              </td>
+            </tr>
+            <td>
+                <label class ="label" for="req1" style="color: black;" >Cost Per Person:</label>
+              </td>
+              <td>
+              <input type="text" value="<?php echo $row['COST'];?>" class="form-control" id="req1" placeholder="(If Any....)" 
+                name="req1" readonly>
+              </td></tr>
 
+              <tr>
+            <td>
+                <label class ="label" for="req7" style="color: black;" >Place:</label>
+              </td>
+              <td>
+              <input type="text" value="<?php echo $row['StartP']." to ".$row['togo'];?>" class="form-control" id="req7" placeholder="(If Any....)" 
+                name="req7" readonly>
+              </td></tr>
+
+            <tr>
+            <td>
+                <label class ="label" for="date" style="color: black;" >Duration:</label>
+              </td>
+              <td>
+              <input type="text" value="<?php echo $row['StartD']." to ".$row['EndIng'];?>" class="form-control" id="date" placeholder="(If Any....)" 
+                name="date" readonly>
+              </td></tr>
+              <tr>
+              <td>
+                <label class ="label" for="req3" style="color: black;" >Stayover At:</label>
+              </td>
+              <td>
+              <input type="text" value="<?php echo $row['HOTEL'];?>" class="form-control" id="req3" placeholder="(If Any....)" 
+                name="req3" readonly>
+              </td>
+            </tr>
+            <tr>
+            <td>
+                <label class ="label" for="req4" style="color: black;" >Others:</label>
+              </td>
+              <td>
+              <input type="text" value="<?php echo $row['Others'];?>" class="form-control" id="req4" placeholder="(If Any....)" 
+                name="req4" readonly>
+              </td>
+              
+            </tr>
+
+          </table>
+          <button type="submit" name="calculate" class="btn btn-success">Book</button>
+        </form>
 
       </div>
       </div>
 
       <!-- Modal footer -->
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Book</button>
+        
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
       </div>
 

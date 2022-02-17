@@ -32,7 +32,7 @@ $sql = "INSERT INTO user (Name, Phone ,mail, password,location) VALUES
                 
                 if (mysqli_query($conn, $sql)) 
                 { 
-                    header('location: User_Login.html'); 
+                    header('location: User_Login.php'); 
                 } 
             }
             mysqli_close($conn);

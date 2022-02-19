@@ -1,13 +1,12 @@
 <?php
 require 'config.php';
-if(!empty($_SESSION["id"])){
+if (!empty($_SESSION["id"])) {
   $m = $_SESSION["id"];
-  $result = mysqli_query($conn,"SELECT * from user where mail= '$m'");
+  $result = mysqli_query($conn, "SELECT * from user where mail= '$m'");
   $row = mysqli_fetch_assoc($result);
   $person = $row["Name"];
   $number = $row["Phone"];
-}
-else{
+} else {
   header("Location: User_Login.php");
 }
 ?>
@@ -22,7 +21,7 @@ else{
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
@@ -30,17 +29,17 @@ else{
   <link rel="stylesheet" type="text/css" href="styles.css">
 
   <style>
-        .card:hover{
-            box-shadow: 6px 12px 6px aqua;
-        }
-        .label{
+    .card:hover {
+      box-shadow: 6px 12px 6px aqua;
+    }
 
-          color: black;
-          font-size: 12px;
-        }
+    .label {
 
-    </style>
-  
+      color: black;
+      font-size: 12px;
+    }
+  </style>
+
 </head>
 
 <body style="color: coral;">
@@ -58,7 +57,7 @@ else{
   <!-- Page content -->
 
   <div class="main">
-    <h1 style="color: black;" align="center">Please find your favourite trip</h1>
+    <h1 style="color: black; margin:20px;" align="center">Please find your favourite trip</h1>
     <div class="row mt-4"></div>
     <?php
     $query = "SELECT * FROM upcoming";
@@ -70,115 +69,113 @@ else{
         <div class="col-md-3">
           <div class="box-container">
             <div class="card" style="margin-bottom: 15px;">
-              <img src="<?php echo $row['Pic']?>" height="200px" alt="">
+              <img src="<?php echo $row['Pic'] ?>" height="200px" alt="">
               <div align="center">
-              <h3 style="margin-top: 10px;"><i class="fas fa-map-marker-alt"></i> <?php echo $row['togo']?></h3>
-              <h4 style="margin: 0px;">Start From:  <?php echo $row['StartP']?> </h4><br>
-              <h5 style="margin: 0px;">Journey Starts on: <?php echo $row['StartD']?></h5> <br>
-              <h5 style="margin: 0px;">Journey Ends on: <?php echo $row['EndIng']?></h5> <br>
-              <h4 style="margin: 0px;">Stayover At: <b> <?php echo $row['HOTEL']?> </b> </h4><br>
-              <h5><?php echo $row['Others']?></h5>
-              <div class="stars" style="margin-bottom: 8px;">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-  
-  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#mymodal<?php echo $row['NUM']?>">
-    Book Now
-  </button>
+                <h3 style="margin-top: 10px;"><i class="fas fa-map-marker-alt"></i> <?php echo $row['togo'] ?></h3>
+                <h4 style="margin: 0px;">Start From: <?php echo $row['StartP'] ?> </h4><br>
+                <h5 style="margin: 0px;">Journey Starts on: <?php echo $row['StartD'] ?></h5> <br>
+                <h5 style="margin: 0px;">Journey Ends on: <?php echo $row['EndIng'] ?></h5> <br>
+                <h4 style="margin: 0px;">Stayover At: <b> <?php echo $row['HOTEL'] ?> </b> </h4><br>
+                <h5><?php echo $row['Others'] ?></h5>
+                <div class="stars" style="margin-bottom: 8px;">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+
+                <button style="margin-bottom: 10px;" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#mymodal<?php echo $row['NUM'] ?>">
+                  Book Now
+                </button>
 
 
-<div class="modal" id="mymodal<?php echo $row['NUM']?>">
-<div class="modal-dialog modal-md">
-    <div class="modal-content">
+                <div class="modal" id="mymodal<?php echo $row['NUM'] ?>">
+                  <div class="modal-dialog modal-md">
+                    <div class="modal-content">
 
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title"><?php echo $row['StartP']."-".$row['togo']?></h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                        <h4 class="modal-title"><?php echo $row['StartP'] . "-" . $row['togo'] ?></h4>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                      </div>
 
-      <!-- Modal body -->
-      <div class="modal-body">
-      <img src="<?php echo $row['Pic']?>" width= 100% height = 100%>
-      <div>
-        <form action="insertbook.php" method="post">
-          <table style="margin: 15px;">
-            <tr>
-              <td>
-                <label class ="label" for="person" >Persons:</label>
-              </td>
-              <td>
-              <input type="number" min = '1' class="form-control" id="person" placeholder="Enter Total Persons" name="person" required>
-              </td>
-            </tr>
-            <td>
-                <label class ="label" for="req1">Cost Per Person:</label>
-              </td>
-              <td>
-              <input type="text" value="<?php echo $row['COST'];?>" class="form-control" id="req1" placeholder="(If Any....)" 
-                name="req1" readonly>
-              </td></tr>
+                      <!-- Modal body -->
+                      <div class="modal-body">
+                        <img src="<?php echo $row['Pic'] ?>" width=100% height=100%>
+                        <div>
+                          <form action="insertbook.php" method="post">
+                            <table style="margin: 15px;">
+                              <tr>
+                                <td>
+                                  <label class="label" for="person">Persons:</label>
+                                </td>
+                                <td>
+                                  <input type="number" min='1' class="form-control" id="person" placeholder="Enter Total Persons" name="person" required>
+                                </td>
+                              </tr>
+                              <td>
+                                <label class="label" for="req1">Cost Per Person:</label>
+                              </td>
+                              <td>
+                                <input type="text" value="<?php echo $row['COST']; ?>" class="form-control" id="req1" placeholder="(If Any....)" name="req1" readonly>
+                              </td>
+                              </tr>
 
-              <tr>
-            <td>
-                <label class ="label" for="req7">Place:</label>
-              </td>
-              <td>
-              <input type="text" value="<?php echo $row['StartP']." to ".$row['togo'];?>" class="form-control" id="req7" placeholder="(If Any....)" 
-                name="req7" readonly>
-              </td></tr>
+                              <tr>
+                                <td>
+                                  <label class="label" for="req7">Place:</label>
+                                </td>
+                                <td>
+                                  <input type="text" value="<?php echo $row['StartP'] . " to " . $row['togo']; ?>" class="form-control" id="req7" placeholder="(If Any....)" name="req7" readonly>
+                                </td>
+                              </tr>
 
-            <tr>
-            <td>
-                <label class ="label" for="date">Duration:</label>
-              </td>
-              <td>
-              <input type="text" value="<?php echo $row['StartD']." to ".$row['EndIng'];?>" class="form-control" id="date" placeholder="(If Any....)" 
-                name="date" readonly>
-              </td></tr>
-              <tr>
-              <td>
-                <label class ="label" for="req3">Stayover At:</label>
-              </td>
-              <td>
-              <input type="text" value="<?php echo $row['HOTEL'];?>" class="form-control" id="req3" placeholder="(If Any....)" 
-                name="req3" readonly>
-              </td>
-            </tr>
-            <tr>
-            <td>
-                <label class ="label" for="req4" >Others:</label>
-              </td>
-              <td>
-              <input type="text" value="<?php echo $row['Others'];?>" class="form-control" id="req4" placeholder="(If Any....)" 
-                name="req4" readonly>
-              </td>
-              
-            </tr>
+                              <tr>
+                                <td>
+                                  <label class="label" for="date">Duration:</label>
+                                </td>
+                                <td>
+                                  <input type="text" value="<?php echo $row['StartD'] . " to " . $row['EndIng']; ?>" class="form-control" id="date" placeholder="(If Any....)" name="date" readonly>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <label class="label" for="req3">Stayover At:</label>
+                                </td>
+                                <td>
+                                  <input type="text" value="<?php echo $row['HOTEL']; ?>" class="form-control" id="req3" placeholder="(If Any....)" name="req3" readonly>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <label class="label" for="req4">Others:</label>
+                                </td>
+                                <td>
+                                  <input type="text" value="<?php echo $row['Others']; ?>" class="form-control" id="req4" placeholder="(If Any....)" name="req4" readonly>
+                                </td>
 
-          </table>
-          <button type="submit" name="calculate" class="btn btn-success">Book</button>
-        </form>
+                              </tr>
 
-      </div>
-      </div>
+                            </table>
+                            <button type="submit" name="calculate" class="btn btn-success">Book</button>
+                          </form>
 
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-      </div>
+                        </div>
+                      </div>
 
-    </div>
-  </div>
-</div>
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
 
               </div>
-              
+
             </div>
           </div>
         </div>

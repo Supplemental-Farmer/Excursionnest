@@ -58,7 +58,7 @@ else{
 
 <!-- Page content -->
 <div class="main">
-<h1 align="center">We prefer not to cancel trips unless emergency situation</h1>
+<h1 align="center">We prefer not to cancel trips unless any emergency situation occurs</h1>
 
 <div class="row mt-4"></div>
     <?php
@@ -79,7 +79,7 @@ else{
               <h4 style="margin: 0px;">Persons: <b> <?php echo $row['PERSON']?> </b> </h4><br>
               <h4 style="margin: 0px;">Total Cost: <b> <?php echo $row['COST']?> </b> </h4><br>
               <form action="cancel.php" method="post">
-              <table style="margin: 15px;">
+              <table style="margin-bottom: 15px;">
             <tr>
               <td style="padding-top:7px;">
                 <label class ="label" for="num" >Trip#</label>

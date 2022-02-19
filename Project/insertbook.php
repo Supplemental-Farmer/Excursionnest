@@ -20,7 +20,7 @@
                 
                 if (mysqli_query($conn, $sql)) 
                 { 
-                    header('location: profile.php'); 
+                    header('location: Bookings.php'); 
                 } 
             }
             mysqli_close($conn);

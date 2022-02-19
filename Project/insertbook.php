@@ -9,7 +9,7 @@
         }
 
         if(isset($_POST["calculate"])){
-          $oth = $_POST["req"];
+          $oth = $_POST["req4"];
           $p = $_POST["person"];
           $c = $_POST["req1"]*$p;
           $startd = $_POST["date"];

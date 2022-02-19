@@ -58,7 +58,7 @@
             <div class="input-group mb-3">
                 <input type="text" class="form-control" value="<?php if (isset($_GET['search'])) {
                                                                     echo $_GET['search'];
-                                                                } ?>" name="search" id="search" placeholder="Search for Your Destination eg. Cox's Bazar, St. Martin......." name="search">
+                                                                } ?>" name="search" id="search" placeholder="Search for Your Destination eg. Cox's Bazar, St. Martin.......">
                 <div class="input-group-btn">
 
                     <button type="submit" class="btn btn-default">

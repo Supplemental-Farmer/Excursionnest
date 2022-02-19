@@ -28,6 +28,18 @@ else{
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script src="jquery-3.4.1.min.js"></script>
   <link rel="stylesheet" type="text/css" href="styles.css">
+
+  <style>
+        .card:hover{
+            box-shadow: 6px 12px 6px aqua;
+        }
+        .label{
+
+          color: black;
+          font-size: 12px;
+        }
+
+    </style>
   
 </head>
 
@@ -85,7 +97,7 @@ else{
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h4 class="modal-title" align="center"><?php echo $row['StartP']."-".$row['togo']?></h4>
+        <h4 class="modal-title"><?php echo $row['StartP']."-".$row['togo']?></h4>
         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
       </div>
 
@@ -97,14 +109,14 @@ else{
           <table style="margin: 15px;">
             <tr>
               <td>
-                <label class ="label" for="person" style="color: black;" >Persons:</label>
+                <label class ="label" for="person" >Persons:</label>
               </td>
               <td>
               <input type="number" min = '1' class="form-control" id="person" placeholder="Enter Total Persons" name="person" required>
               </td>
             </tr>
             <td>
-                <label class ="label" for="req1" style="color: black;" >Cost Per Person:</label>
+                <label class ="label" for="req1">Cost Per Person:</label>
               </td>
               <td>
               <input type="text" value="<?php echo $row['COST'];?>" class="form-control" id="req1" placeholder="(If Any....)" 
@@ -113,7 +125,7 @@ else{
 
               <tr>
             <td>
-                <label class ="label" for="req7" style="color: black;" >Place:</label>
+                <label class ="label" for="req7">Place:</label>
               </td>
               <td>
               <input type="text" value="<?php echo $row['StartP']." to ".$row['togo'];?>" class="form-control" id="req7" placeholder="(If Any....)" 
@@ -122,7 +134,7 @@ else{
 
             <tr>
             <td>
-                <label class ="label" for="date" style="color: black;" >Duration:</label>
+                <label class ="label" for="date">Duration:</label>
               </td>
               <td>
               <input type="text" value="<?php echo $row['StartD']." to ".$row['EndIng'];?>" class="form-control" id="date" placeholder="(If Any....)" 
@@ -130,7 +142,7 @@ else{
               </td></tr>
               <tr>
               <td>
-                <label class ="label" for="req3" style="color: black;" >Stayover At:</label>
+                <label class ="label" for="req3">Stayover At:</label>
               </td>
               <td>
               <input type="text" value="<?php echo $row['HOTEL'];?>" class="form-control" id="req3" placeholder="(If Any....)" 
@@ -139,7 +151,7 @@ else{
             </tr>
             <tr>
             <td>
-                <label class ="label" for="req4" style="color: black;" >Others:</label>
+                <label class ="label" for="req4" >Others:</label>
               </td>
               <td>
               <input type="text" value="<?php echo $row['Others'];?>" class="form-control" id="req4" placeholder="(If Any....)" 

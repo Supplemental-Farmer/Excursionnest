@@ -59,7 +59,7 @@ if(isset($_POST["submit"])){
 .jumbotron{
     position: relative;
     top: 0px;
-    padding-top: 130px;
+    padding-top: 60px;
     background-color:transparent !important;
 }
     </style>

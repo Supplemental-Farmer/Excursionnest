@@ -9,16 +9,7 @@ else{
   header("Location: User_Login.php");
 }
 ?>
-<?php
-if(isset($_POST["update"])){
-    $na = $_POST["updatedname"];
-    $pa = $_POST["updatedpass"];
-    $po = $_POST["updatednum"];
-    $area = $_POST["updatedarea"];
-    $r = mysqli_query($conn,"UPDATE user SET name = '$na', Phone = '$po', Location = '$area', Password = '$pa' WHERE mail='$m'");
-    
-}
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,11 +47,10 @@ if(isset($_POST["update"])){
 <div class="jumbotron">
                 <a href="Home.php"><h6 align = "center" ><img src="Pictures/hosse.png" ></h6></a>
 <h2 align="center">Welcome <?php echo $row["Name"] ?></h2>
-<h3 align="center">Mail:  <?php echo $row["mail"] ?></h1>
 
 <div class="row">
   <div class="col" align="center">
-    <form action="" method="POST">
+    <form action="update.php" method="POST">
       <?php
         $sql = "SELECT * FROM user WHERE mail='$m'";
         $new = mysqli_query($conn,$sql);
@@ -68,6 +58,14 @@ if(isset($_POST["update"])){
           while($row = mysqli_fetch_array($new)){
             ?>
             <table align="center">
+            <tr align="center">
+                <td>
+                <label class ="label" for="updatedname">Mail:</label>
+                </td>
+                <td>
+                <input type="text" name="updatedname" class="form-control" value="<?php echo $row["mail"] ;?>" readonly>  
+                </td>
+              </tr>
               <tr align="center">
                 <td>
                 <label class ="label" for="updatedname">Name:</label>
@@ -110,6 +108,7 @@ if(isset($_POST["update"])){
       </table>
       <input type="submit" name="update" class="btn btn-info" style="margin-top: 10px;" value="Update">
             <?php
+            
           }
         }
       ?>

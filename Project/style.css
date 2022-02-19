@@ -6,7 +6,7 @@ body{
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    animation: slider 30s infinite linear ;
+    animation: slider 30s ease infinite linear ;
     
 }
 .glyphicon-search{

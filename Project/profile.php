@@ -60,10 +60,10 @@ else{
             <table align="center">
             <tr align="center">
                 <td>
-                <label class ="label" for="updatedname">Mail:</label>
+                <label class ="label" for="updatedmail">Mail:</label>
                 </td>
                 <td>
-                <input type="text" name="updatedname" class="form-control" value="<?php echo $row["mail"] ;?>" readonly>  
+                <input type="text" name="updatedmail" class="form-control" value="<?php echo $row["mail"] ;?>" readonly>  
                 </td>
               </tr>
               <tr align="center">
@@ -71,7 +71,7 @@ else{
                 <label class ="label" for="updatedname">Name:</label>
                 </td>
                 <td>
-                <input type="text" name="updatedname" class="form-control" value="<?php echo $row["Name"];?>">  
+                <input type="text" name="updatedname" class="form-control" value="<?php echo $row["Name"];?>" required>  
                 </td>
               </tr>
 
@@ -80,7 +80,7 @@ else{
                 <label class ="label" for="updatednum">Phone:</label>
                 </td>
                 <td>
-                <input type="text" name="updatednum" class="form-control" value="<?php echo $row['Phone'];?>">
+                <input type="text" name="updatednum" class="form-control" value="<?php echo $row['Phone'];?>" required>
                 </td>
               </tr>
 
@@ -89,7 +89,7 @@ else{
                 <label class ="label" for="updatedarea">Location:</label>
                 </td>
                 <td>
-        <input type="text" name="updatedarea" class="form-control" value="<?php echo $row['location'];?>">
+        <input type="text" name="updatedarea" class="form-control" value="<?php echo $row['location'];?>" required>
                 </td>
               </tr>
 
@@ -98,7 +98,7 @@ else{
                 <label class ="label" for="updatedpass">Password:</label>
                 </td>
                 <td>
-                <input type="password" name="updatedpass" class="form-control" value="<?php echo $row['password'];?>">
+                <input type="password" name="updatedpass" class="form-control" value="<?php echo $row['password'];?>" required>
                 </td>
               </tr>
       

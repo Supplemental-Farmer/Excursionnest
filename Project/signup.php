@@ -23,8 +23,9 @@ $result = mysqli_query($conn,$s);
 $n = mysqli_num_rows($result);
 
 if($n==1){
-    echo "<script>alert ('User Not Registered')</script>";
+    
     header('location:signup.html');
+    echo "<script>alert ('User Already Registered')</script>";
 }
 else{
 $sql = "INSERT INTO user (Name, Phone ,mail, password,location) VALUES 

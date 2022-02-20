@@ -6,25 +6,9 @@ body{
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    animation: slider 30s ease infinite linear ;
+    animation: slider 30s infinite linear ;
     
 }
-.glyphicon-search{
-    font-size: 20px;
-}
-.btn-default{
-    background-color: coral;
-    width: 80px;
-    padding: 12.5px;
-}
-
-.form-control{
-    padding: 25px;
-    font-size: 20px;
-}
-
-
-
 @keyframes slider{
     0% {
         background-image: url("Pictures/back2.jpg");
@@ -48,9 +32,20 @@ body{
     }
 
 }
-::-webkit-scrollbar{
-    display: none;
+.glyphicon-search{
+    font-size: 20px;
 }
+.btn-default{
+    background-color: coral;
+    width: 80px;
+    padding: 12.5px;
+}
+
+.form-control{
+    padding: 25px;
+    font-size: 20px;
+}
+
 .navbar-header{
     margin-left: 10px;
 }

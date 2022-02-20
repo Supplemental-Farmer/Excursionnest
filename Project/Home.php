@@ -10,8 +10,46 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <style>
+        body{
+	height: 100%;
+    background: url("Pictures/back1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    animation: slider 40s infinite linear ;
+    
+}
+@keyframes slider{
+    0% {
+        background-image: url("Pictures/back2.jpg");
+
+    }
+    20%{
+
+        background-image: url("Pictures/back.jpg");
+    }
+    40%{
+
+        background-image: url("Pictures/back3.jpg");
+    }
+    60%{
+
+        background-image: url("Pictures/back1.jpg");
+    }
+    80%{
+
+        background-image: url("Pictures/back5.jpg");
+    }
+
+}
         .card:hover{
-            box-shadow: 6px 12px 6px aqua;
+            box-shadow: 6px 8px 6px rgba(255, 162, 208, 0.959),6px 8px 6px khaki;
+        }
+
+        .card{
+            background-image: linear-gradient(hotpink,khaki);
+            font-size: 8px;
         }
     </style>
 
@@ -88,17 +126,17 @@
                                         <div class="card"style="margin-bottom: 15px;">
                                             <img src="<?php echo $items['Pic'] ?>" height="200px" alt="">
                                             <div align="center">
-                                                <h3  style="margin-top: 10px;"><i class="	fa fa-map-marker"></i> <?php echo $items['togo'] ?></h3>
-                                                <h4 style="margin: 0px;">Start From: <?php echo $items['StartP'] ?> </h4><br>
+                                                <h4  style="margin-top: 10px;"><i class="	fa fa-map-marker" style="color:green"></i> <?php echo $items['togo'] ?></h4>
+                                                <h5 style="margin: 0px;">Start From: <?php echo $items['StartP'] ?> </h5><br>
                                                 <div class="price">
-                                                    <h4 style="margin-top: 0px;"><?php echo $items['COST'] ?> BDT Per Person</h4>
+                                                    <h5 style="margin-top: 0px;"><?php echo $items['COST'] ?> BDT Per Person</h5>
                                                 </div>
-                                                <div class="stars" style="margin-top: 0px;">
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
-                                                    <i class="fa fa-star"></i>
+                                                <div class="stars" style="margin-top: 0px;margin-bottom:10px;">
+                                                    <i class="fa fa-star" style="color:crimson"></i>
+                                                    <i class="fa fa-star" style="color:crimson"></i>
+                                                    <i class="fa fa-star" style="color:crimson"></i>
+                                                    <i class="fa fa-star" style="color:crimson"></i>
+                                                    <i class="fa fa-star" style="color:crimson"></i>
                                                 </div>
                                             </div>
 

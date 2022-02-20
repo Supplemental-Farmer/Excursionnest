@@ -12,6 +12,17 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="styleTrips.css">
     <title>Recent Trips</title>
+    <style>
+        .card:hover{
+            box-shadow: 6px 8px 6px burlywood,6px 8px 6px khaki;
+        }
+
+        .card{
+            background-color: linear-gradient(hotpink,khaki);
+            font-size: 8px;
+            box-shadow: 6px 8px 6px black;
+        }
+    </style>
 </head>
 
 <body>
@@ -66,7 +77,7 @@
                                     <h6 style="margin: 0px;">Stayed in: <b><?php echo $row['HOTEL']?></b></h6>
                                     <h6 style="margin: 0px;">Cost Per Person: <b> <?php echo $row['COST']?></b></h6>
                                     <h6 style="margin: 0px;"> Number of Persons:<b> <?php echo $row['PERSON']?></b></h6>
-                                    <?php echo $row['Others']?>
+                                    <h6>Included: <b><?php echo $row['Others'];?></b></h6>
                                     </p>
                             </div>
                             </div>

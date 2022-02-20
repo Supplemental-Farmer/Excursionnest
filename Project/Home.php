@@ -49,6 +49,7 @@
 
         .card{
             background-image: linear-gradient(hotpink,khaki);
+            box-shadow: 6px 8px 6px black;
             font-size: 8px;
         }
     </style>

@@ -84,7 +84,7 @@ if(isset($_POST["submit"])){
                                     </tr>
                                     <tr><br></tr>
                                     <td>
-                                    <label  class ="label" for="phone">Password:</label>
+                                    <label  class ="label" for="pass">Password:</label>
                                     </td>
                                     <td><input type="password" class="form-control" id="pass" height="10px" placeholder="Password" name="pass" required >
                                     </td>

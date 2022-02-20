@@ -25,7 +25,7 @@ if (isset($_POST["submit"]))
         if($pass==$row["password"])
        { 
            $_SESSION["login"]=true;
-           $_SESSION["id"]=$row["Phone"];
+           $_SESSION["id"]=$row["mail"];
            header('location: admin_profile.php');
      } 
     }

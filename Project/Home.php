@@ -5,11 +5,8 @@
     <title>ExcursionNest</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <style>
@@ -46,7 +43,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="User_Login.php"><i class="fa fa-user"></i> Login</a></li>
                     <li><a href="signup.html"><i class="fa fa-user-plus"></i> SignUp</a></li>
-                    <li><a href="admin.html"><i class="fa fa-lock"></i> Admin</a></li>
+                    <li><a href="admin.php"><i class="fa fa-lock"></i> Admin</a></li>
                 </ul>
             </div>
             </div>

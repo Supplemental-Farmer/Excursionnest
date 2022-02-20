@@ -1,3 +1,14 @@
+<?php
+require 'config.php';
+if (!empty($_SESSION["id"])) {
+  $m = $_SESSION["id"];
+  $result = mysqli_query($conn, "SELECT * from administrator where mail= '$m'");
+  $row = mysqli_fetch_assoc($result);
+} else {
+  header("Location: admin.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +28,12 @@
 <body>
 
     <div class="container">
+    <a href="Home.php"><h6 align = "left" ><img src="Pictures/hosse.png" ></h6></a>
+    <form action="adminout.php" method="POST">
+    <h6 align="right"><button type="submit" name="logout" class="btn btn-danger">Log Out</button></h6>
+    </form>
+    
+
         <ul class="nav nav-tabs">
           <li class="active"><a data-toggle="tab" href="#home"><i class="fa fa-location-arrow"></i> Upcoming Trips</a></li>
           <li><a data-toggle="tab" href="#menu1"><i class="fa fa-globe"></i> Previous Trips</a></li>
@@ -333,7 +350,7 @@
           <div id="menu3" class="tab-pane fade">
             <h3>Messages</h3>
             
-          </div>
+          </div></div></div>
 </body>
 </html> 
 

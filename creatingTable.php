@@ -25,7 +25,9 @@
 			Phone varchar(15), 
 			mail varchar(50),
 			password varchar(20),
-			location varchar(20) 
+			location varchar(20),
+			Msg varchar(255),
+			rep varchar(255)
 		)"; 
 
 		if (mysqli_query($conn, $sql)) 

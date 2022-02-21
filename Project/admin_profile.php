@@ -24,6 +24,10 @@ if (!empty($_SESSION["id"])) {
     <script src="jquery-3.4.1.min.js"></script>
     <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
     <link rel="stylesheet" type="text/css" href="profile_admin.css">
+    <style>
+      textarea {
+  resize: none;
+    </style>
 </head>
 <body>
 
@@ -342,13 +346,85 @@ if (!empty($_SESSION["id"])) {
 		} 
     echo "</tbody>";
 		echo "</table>"; 
-		mysqli_close($conn); 
 	?>
             
           </div>
           
           <div id="menu3" class="tab-pane fade">
-            <h3>Messages</h3>
+          <div class="row mt-4"></div>
+    <?php
+    $query = "SELECT * FROM user where rep is null and Msg is not null";
+    $query_run = mysqli_query($conn, $query);
+    $check = mysqli_num_rows($query_run) > 0;
+    if ($check) {
+      while ($row = mysqli_fetch_assoc($query_run)) {
+    ?>
+    <div align="center">
+  <div class="panel panel-warning">
+  <div class="panel-heading">Message From : <?php echo $row['mail'] ?> </div>
+  <div class="panel-body">
+  <h4 style="margin: 0px;">Message: <?php echo $row['Msg'] ?> </h4><br>
+  <button style="margin-bottom: 10px;" type="button" class="btn btn-success" data-toggle="modal" data-target="#mymodal<?php echo $row['Phone'] ?>">
+  <i class="fas fa-reply"></i>
+                </button>
+
+
+                <div id="mymodal<?php echo $row['Phone'] ?>" class="modal fade" role="dialog">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+
+                      <!-- Modal Header -->
+                      <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
+
+                      <!-- Modal body -->
+                      <div class="modal-body">
+                        <div>
+                          <form action="adminmessage.php" method="post">
+                            <table align="center">
+                            <tr>
+                                <td>
+                                  <label class="label" for="mail">Email:</label>
+                                </td>
+                                <td>
+                                  <input type="text" value="<?php echo $row['mail']; ?>" class="form-control" id="mail" name="mail" readonly>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                <label class="label" for="msg">Reply:</label>
+                                </td>
+                                <td>
+                                <textarea class="form-control" rows="5" id="amsg" name="amsg"></textarea>
+                                </td>
+
+                              </tr>
+
+                            </table>
+                            <button type="submit" name="reply" class="btn btn-success" style="margin-top:10px;">Deliver</button>
+                          </form>
+
+                        </div>
+                      </div>
+
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+  </div>
+</div>
+</div>
+    <?php
+      }
+    }
+    mysqli_close($conn); 
+    ?>
             
           </div></div></div>
 </body>

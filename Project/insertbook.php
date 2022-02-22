@@ -21,8 +21,7 @@
                 
                 if (mysqli_query($conn, $sql)) 
                 { 
-                    echo "<script>alert('Successfully Booked!!!')</script>";
-                    echo("<script>window.location = 'Bookings.php';</script>");
+                    header("location: Bookings.php");
                 } 
             }
             mysqli_close($conn);

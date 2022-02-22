@@ -28,7 +28,8 @@
 			Others VARCHAR(80),
 			Pic VARCHAR(80),
 			COST INT,
-			NUM INT
+			NUM INT,
+			FLAG INT DEFAULT 0
 		)";
 
 

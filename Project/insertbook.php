@@ -12,11 +12,12 @@
           $oth = $_POST["req4"];
           $p = $_POST["person"];
           $c = $_POST["req1"]*$p;
-          $startd = $_POST["date"];
+          $startd = $_POST["date1"];
+          $end = $_POST["date2"];
           $hotel = $_POST["req3"];
           $togo = $_POST["req7"];
-          $sql = "INSERT INTO booked (mail,p_name,phone,place,span,HOTEL,Others, COST, PERSON) VALUES 
-				('$m', '$person','$number','$togo','$startd','$hotel','$oth',$c,$p)";
+          $sql = "INSERT INTO booked (mail,p_name,phone,place,StartD,EndIng,HOTEL,Others, COST, PERSON) VALUES 
+				('$m', '$person','$number','$togo','$startd','$end','$hotel','$oth',$c,$p)";
                 
                 if (mysqli_query($conn, $sql)) 
                 { 

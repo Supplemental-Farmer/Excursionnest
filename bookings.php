@@ -24,12 +24,14 @@
             p_name VARCHAR (80),
             phone VARCHAR (80),
 			place VARCHAR(80),
-			span VARCHAR (80),
+			StartD VARCHAR (80),
+			EndIng VARCHAR(80),
 			HOTEL VARCHAR(80),
 			Others VARCHAR(80),
 			COST INT,
 			PERSON INT,
-			NUM INT
+			NUM INT,
+			FLAG INT DEFAULT 0
 		)";
 
 

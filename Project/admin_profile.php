@@ -172,64 +172,13 @@ if (!empty($_SESSION["id"])) {
       </div>
           
         <div id="menu1" class="tab-pane fade">
-        <h3>Previous Trips</h3>
         <div class="row ">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 ">
-        <div class="card">
-        <div align ="left">
-        <form action="Entry.php" method="post">
-            <div class="form-group">
-                <label class ="label" for="def" >Departure From:</label>
-                <input type="text" class="form-control" id="def" placeholder="Departure From" name="def" required>
-              </div>
-              <div class="form-group">
-                <label class ="label" for="det">Departure Date:</label>
-                <input type="date" class="form-control" id="det" placeholder="Departure Time" 
-                name="det" required >
-              </div>
-              <div class="form-group">
-                <label class ="label" for="des">Destination:</label>
-                <input type="text" class="form-control" id="des" placeholder="Destination Place Name" name="des" required>
-              </div>
-              <div class="form-group">
-                <label  class ="label" for="hotel">Hotel :</label>
-                <input type="text" class="form-control" id="hotel" placeholder="Hotel Name" 
-                name="hotel" required >
-              </div>
-              <div class="form-group">
-                <label class ="label" for="pers">Persons:</label>
-                <input type="number" class="form-control" id="pers" placeholder="Number of Persons" name="pers" min = "1" required>
-              </div>
-              <div class="form-group">
-                <label  class ="label" for="cost">Cost:</label>
-                <input type="number" class="form-control" id="cost" placeholder="Total Expense" 
-                name="cost" step ='1000' min="1000" required >
-              </div>
-              <div class="form-group">
-                <label class ="label" for="other">Others :</label>
-                <input type="text" class="form-control" id="other" placeholder="Additional information" name="other" required>
-              </div>
-              <div class="form-group">
-                <label  class ="label" for="ret">Return Date:</label>
-                <input type="date" class="form-control" id="ret" placeholder="Returning Time" 
-                name="ret" required >
-              </div>
-          <button type="submit" class="btn btn-primary"> ADD</button></form>
-          <form action="Deletetrip_pre.php" method="post">
-              <div class="form-group">
-                <label  class ="label" for="sl">Sl No:</label>
-                <input type="number" step="1" class="form-control" id="sl" placeholder="SL number for delete" 
-                name="sl" >
-              </div>
-        <button type="submit" class="btn btn-danger">Delete</button>
-        </form>
-        </div>
-      </div>
-      </div>
+        
       
-
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
+      
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
       <div class="card">
+      <div align='center'>
       <?php
         error_reporting(0);
         $servername = "localhost"; 
@@ -244,10 +193,10 @@ if (!empty($_SESSION["id"])) {
             { 
                 die("Connection failed: " . mysqli_connect_error()); 
             } 
-            $sql = "SELECT * FROM pre"; 
+            $sql = "SELECT * FROM upcoming WHERE FLAG=1"; 
             $result = mysqli_query($conn, $sql); 
             
-            echo "<h3 align='center'>Previously Completed Trips</h3>";
+            echo "<h2 align='center'>Previously Completed Trips</h2>";
             echo "<table align = 'Center' border=2px width=850px style= 'margin-top: 40px'>"; 
 
             echo "<tr height='20px' bgcolor='coral' align='center'>"; 
@@ -258,7 +207,6 @@ if (!empty($_SESSION["id"])) {
             <td> <b>Return Time</b></td>
             <td> <b>Hotel Name</b></td>
             <td> <b>Cost</b></td>
-            <td> <b>Persons</td> </b>
             <td> <b>Others</b></td>"; 
             echo "</tr>";
 
@@ -277,8 +225,7 @@ if (!empty($_SESSION["id"])) {
                      echo "<td>" . $row['togo'] . "</td>";  
                      echo "<td>" . $row['EndIng'] . "</td>"; 
                      echo "<td>" . $row['HOTEL'] . "</td>"; 
-                     echo "<td>" . $row['COST'] . "</td>";
-                     echo "<td>" . $row['PERSON'] . "</td>"; 
+                     echo "<td>" . $row['COST'] . "</td>"; 
                      echo "<td>" . $row['Others'] . "</td>";   
                      echo "</tr>"; 
                  } 
@@ -293,7 +240,7 @@ if (!empty($_SESSION["id"])) {
            ?>      
 
       </div>
-
+      </div>
       </div>
       </div>
       </div>
@@ -301,7 +248,7 @@ if (!empty($_SESSION["id"])) {
 
           
           <div id="menu2" class="tab-pane fade">
-            <h3 align ="center" style="margin-top: 80px">Clients Information</h3>
+            <h2 align ="center">Clients Information</h2>
         <?php 
         
 		$servername = "localhost"; 

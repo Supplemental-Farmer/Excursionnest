@@ -19,7 +19,6 @@ else{
                 
                 if (mysqli_query($conn, $sql)) 
                 { 
-                    // 
                     header('location: admin_profile.php'); 
                 } 
             }

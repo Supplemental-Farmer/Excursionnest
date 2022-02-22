@@ -1,3 +1,12 @@
+<?php
+$conn = mysqli_connect("localhost","root","","excursionnest");
+
+$query = "UPDATE upcoming SET FLAG=1 WHERE StartD < CURDATE()";
+mysqli_query($conn,$query);
+$query1 = "UPDATE booked SET FLAG=1 WHERE EndIng < CURDATE()";
+mysqli_query($conn,$query1);
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -51,6 +60,7 @@
             background-image: linear-gradient(hotpink,khaki);
             box-shadow: 6px 8px 6px black;
             font-size: 8px;
+            border-radius: 5%;
         }
     </style>
 
@@ -116,7 +126,7 @@
                     $conn = mysqli_connect("localhost", "root", "", "excursionnest");
                     if (isset($_GET['search'])) {
                         $filter = $_GET['search'];
-                        $query = "SELECT * FROM upcoming WHERE togo LIKE '%$filter%'";
+                        $query = "SELECT * FROM upcoming WHERE togo LIKE '%$filter%' AND FLAG=0";
                         $query_run = mysqli_query($conn, $query);
                         if (mysqli_num_rows($query_run) > 0) {
                             foreach ($query_run as $items) {
@@ -125,7 +135,7 @@
                                 <div class="col-md-3" >
                                     <div class="box-container">
                                         <div class="card"style="margin-bottom: 15px;">
-                                            <img src="<?php echo $items['Pic'] ?>" height="200px" alt="">
+                                            <img src="<?php echo $items['Pic'] ?>" height="200px" alt="" style="border-radius: 5%;">
                                             <div align="center">
                                                 <h4  style="margin-top: 10px;"><i class="	fa fa-map-marker" style="color:green"></i> <?php echo $items['togo'] ?></h4>
                                                 <h5 style="margin: 0px;">Start From: <?php echo $items['StartP'] ?> </h5><br>

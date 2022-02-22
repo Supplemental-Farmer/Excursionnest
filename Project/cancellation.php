@@ -29,6 +29,8 @@ else{
     <style>
         .card{
             background-image: linear-gradient(lightcoral, lightblue);
+            box-shadow: 6px 8px 6px black;
+            border-radius: 5%;
         }
         .card:hover{
             box-shadow: 6px 12px 6px lightcoral;
@@ -57,7 +59,7 @@ else{
 <div class="main">
 <h1 align="center">We prefer not to cancel trips unless any emergency situation occurs</h1>
 
-<div class="row mt-4"></div>
+<div class="row mt-4" style="justify-content: center;">
     <?php
     $query = "SELECT * FROM booked where mail = '$m'";
     $query_run = mysqli_query($conn, $query);
@@ -69,10 +71,11 @@ else{
           <div class="box-container">
             <div class="card" style="margin-bottom: 15px;">
               <div align="center">
-              <h3 style="margin-top: 10px;"><i class="fas fa-map-marker-alt"></i> <?php echo $row['place']?></h3>
-              <h4 style="margin: 0px;">Duration:  <?php echo $row['span']?> </h4><br>
-              <h5 style="margin: 0px;">Hotel Name: <?php echo $row['HOTEL']?></h5> <br>
-              <h5 style="margin: 0px;">Others: <?php echo $row['Others']?></h5> <br>
+              <h4 style="margin-top: 10px;margin-bottom: 10px;"><i class="fas fa-map-marker-alt"></i> <?php echo $row['place']?></h3>
+              <h4 style="margin: 0px;">Starts On:  <?php echo $row['StartD']?> </h4><br>
+              <h4 style="margin: 0px;">Ends On:  <?php echo $row['EndIng']?> </h4><br>
+              <h4 style="margin: 0px;">Hotel Name: <?php echo $row['HOTEL']?></h4> <br>
+              <h4 style="margin: 0px;">Others: <?php echo $row['Others']?></h5> <br>
               <h4 style="margin: 0px;">Persons: <b> <?php echo $row['PERSON']?> </b> </h4><br>
               <h4 style="margin: 0px;">Total Cost: <b> <?php echo $row['COST']?> </b> </h4><br>
               <form action="cancel.php" method="post">
@@ -91,7 +94,7 @@ else{
   </button>
       </form>
 </div>
-
+</div>
 </div>
 </div>
 </div>

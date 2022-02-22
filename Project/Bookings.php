@@ -29,6 +29,11 @@ if (!empty($_SESSION["id"])) {
   <link rel="stylesheet" type="text/css" href="styles.css">
 
   <style>
+    .card{
+            border-radius: 5%;
+            background-image: linear-gradient(darkseagreen,plum);
+            box-shadow: 6px 8px 6px black;
+        }
     .card:hover {
       box-shadow: 6px 12px 6px aqua;
     }
@@ -42,7 +47,7 @@ if (!empty($_SESSION["id"])) {
 
 </head>
 
-<body style="color: coral;">
+<body>
   <div class="sidenav">
     <ul class="nav nav-tabs">
       <li><a class="nav-link" href="profile.php"><i class="fa fa-user-circle"></i> User Profile</a></li>
@@ -60,7 +65,7 @@ if (!empty($_SESSION["id"])) {
     <h1 style="color: black; margin:20px;" align="center">Please find your favourite trip</h1>
     <div class="row mt-4"></div>
     <?php
-    $query = "SELECT * FROM upcoming";
+    $query = "SELECT * FROM upcoming WHERE FLAG=0";
     $query_run = mysqli_query($conn, $query);
     $check = mysqli_num_rows($query_run) > 0;
     if ($check) {
@@ -69,7 +74,7 @@ if (!empty($_SESSION["id"])) {
         <div class="col-md-3">
           <div class="box-container">
             <div class="card" style="margin-bottom: 15px;">
-              <img src="<?php echo $row['Pic'] ?>" height="200px" alt="">
+              <img src="<?php echo $row['Pic'] ?>" height="200px" alt="" style="border-radius: 5%;">
               <div align="center">
                 <h3 style="margin-top: 10px;"><i class="fas fa-map-marker-alt"></i> <?php echo $row['togo'] ?></h3>
                 <h4 style="margin: 0px;">Start From: <?php echo $row['StartP'] ?> </h4><br>
@@ -133,10 +138,18 @@ if (!empty($_SESSION["id"])) {
 
                               <tr>
                                 <td>
-                                  <label class="label" for="date">Duration:</label>
+                                  <label class="label" for="date">Starts On:</label>
                                 </td>
                                 <td>
-                                  <input type="text" value="<?php echo $row['StartD'] . " to " . $row['EndIng']; ?>" class="form-control" id="date" placeholder="(If Any....)" name="date" readonly>
+                                  <input type="text" value="<?php echo $row['StartD'];?>" class="form-control" id="date1" placeholder="(If Any....)" name="date1" readonly>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>
+                                  <label class="label" for="date">Ends on:</label>
+                                </td>
+                                <td>
+                                  <input type="text" value="<?php echo  $row['EndIng'];?>" class="form-control" id="date2" placeholder="(If Any....)" name="date2" readonly>
                                 </td>
                               </tr>
                               <tr>

@@ -72,7 +72,7 @@ else{
 
 <!-- Page content -->
 <div class="main">
-<h1 class="glow" align="center">MESSAGE TO ADMIN</h1>
+<h1 class="glow" style="margin-top: 50px;" align="center">Message to Admin</h1>
 <div class="row mx-3 my-5">
 <div class="col-xs-2 col-sm-2 col-md-3 col-lg-3"></div>
 <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">

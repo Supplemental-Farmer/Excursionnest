@@ -9,7 +9,8 @@
 
         if(isset($_POST["reply"])){
           $msg = $_POST["amsg"];
-          $sql = "UPDATE user SET rep= '$msg' WHERE mail='$m'";
+          $mail = $_POST["mail"];
+          $sql = "UPDATE user SET rep= '$msg' WHERE mail='$mail'";
                 
                 if (mysqli_query($conn, $sql)) 
                 { 

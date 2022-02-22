@@ -43,6 +43,22 @@ if (!empty($_SESSION["id"])) {
       color: black;
       font-size: 12px;
     }
+    .glow {
+  font-size: 40px;
+  color: #fff;
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #dfbf9f, 0 0 20px #d9b38c, 0 0 30px #d2a679, 0 0 40px #cc9966, 0 0 50px #cc9966, 0 0 60px #cc9966, 0 0 70px #cc9966;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #c68c53, 0 0 30px #bf8040, 0 0 40px #ac7339, 0 0 50px#996633, 0 0 60px #996633, 0 0 70px #996633, 0 0 80px #996633 ;
+  }
+}
   </style>
 
 </head>
@@ -62,7 +78,7 @@ if (!empty($_SESSION["id"])) {
   <!-- Page content -->
 
   <div class="main">
-    <h1 style="color: black; margin:20px;" align="center">Please find your favourite trip</h1>
+    <h1 class="glow" style=" margin:50px;" align="center">Available Trips</h1>
     <div class="row mt-4"></div>
     <?php
     $query = "SELECT * FROM upcoming WHERE FLAG=0";

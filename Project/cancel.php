@@ -8,12 +8,11 @@ if(!empty($_SESSION["id"])){
   else{
     header("Location: User_Login.php");
   }
- 
 if(isset($_POST["delete"])){
     $n = $_POST["num"];
   mysqli_query($conn,"DELETE FROM booked WHERE NUM= $n");
-  echo "<script>alert('Confirm?')</script>";
-  header("location: cancellation.php");
-}
+  echo "<script>alert('Selected Trip has been Cancelled.')</script>";
+  echo("<script>window.location = 'cancellation.php';</script>");
 
+}
 ?>

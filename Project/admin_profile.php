@@ -34,7 +34,7 @@ if (!empty($_SESSION["id"])) {
     <div class="container">
     <a href="Home.php"><h6 align = "left" ><img src="Pictures/hosse.png" ></h6></a>
     <form action="adminout.php" method="POST">
-    <h6 align="right"><button type="submit" name="logout" class="btn btn-danger">Log Out</button></h6>
+    <h6 align="right"><button type="submit" name="logout" class="btn btn-danger"><i class="fas fa-sign-out-alt"></i> Log Out</button></h6>
     </form>
     
 

@@ -28,21 +28,22 @@ if (!empty($_SESSION["id"])) {
 
   <style>
     .glow {
-  font-size: 40px;
-  color: #fff;
-  text-align: center;
-  animation: glow 1s ease-in-out infinite alternate;
-}
+      font-size: 40px;
+      color: #fff;
+      text-align: center;
+      animation: glow 1s ease-in-out infinite alternate;
+    }
 
-@-webkit-keyframes glow {
-  from {
-    text-shadow: 0 0 10px #ff9999, 0 0 20px #ff8080, 0 0 30px #ff6666, 0 0 40px #ff4d4d, 0 0 50px #ff4d4d, 0 0 60px #ff4d4d, 0 0 70px #ff4d4d;
-  }
-  
-  to {
-    text-shadow: 0 0 20px #ff3333, 0 0 30px #ff1a1a, 0 0 40px #ff0000, 0 0 50px#ff0000, 0 0 60px #ff0000, 0 0 70px #ff0000, 0 0 80px #ff0000 ;
-  }
-}
+    @-webkit-keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ff9999, 0 0 20px #ff8080, 0 0 30px #ff6666, 0 0 40px #ff4d4d, 0 0 50px #ff4d4d, 0 0 60px #ff4d4d, 0 0 70px #ff4d4d;
+      }
+
+      to {
+        text-shadow: 0 0 20px #ff3333, 0 0 30px #ff1a1a, 0 0 40px #ff0000, 0 0 50px#ff0000, 0 0 60px #ff0000, 0 0 70px #ff0000, 0 0 80px #ff0000;
+      }
+    }
+
     .card {
       background-image: linear-gradient(lightcoral, lightblue);
       box-shadow: 6px 8px 6px black;
@@ -78,7 +79,7 @@ if (!empty($_SESSION["id"])) {
   <div class="main">
     <h1 class="glow" align="center" style="margin: 50px;">Cancellations</h1>
 
-    <div class="row mt-4" style="justify-content: center;">
+    <div class="row" style="justify-content: center;">
       <?php
       $query = "SELECT * FROM booked where mail = '$m'";
       $query_run = mysqli_query($conn, $query);
@@ -110,7 +111,7 @@ if (!empty($_SESSION["id"])) {
                         </table>
                         <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Do not cancel trips unless any emergency situation occurs">
                           <button type="submit" class="btn btn-danger" name="delete" style="margin-bottom :5px;">
-                        Cancel</button></span>
+                            Cancel</button></span>
 
 
                       </form>
@@ -120,12 +121,12 @@ if (!empty($_SESSION["id"])) {
 
             </div>
           </div>
-    </div>
-<?php
+
+      <?php
         }
       }
-?>
-
+      ?>
+    </div>
   </div>
   </div>
 

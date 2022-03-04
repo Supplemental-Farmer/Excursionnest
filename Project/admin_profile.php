@@ -28,12 +28,12 @@ if (!empty($_SESSION["id"])) {
       textarea {
   resize: none;
       }
-      table tr{
+      #table tr{
       cursor: pointer;
       transition: all .25s ease-in-out;
 
   }
-  table tr:hover{
+  #table tr:hover{
     background-color: darksalmon;
   }
     </style>
@@ -85,7 +85,7 @@ if (!empty($_SESSION["id"])) {
               <div class="form-group">
                 <label  class ="label" for="cost">Cost:</label>
                 <input type="number" class="form-control" id="cost" placeholder="Cost per person" 
-                name="cost" step = '500' min="1000" required >
+                name="cost" step = '100' min="1000" required >
               </div>
               <div class="form-group">
                 <label class ="label" for="other">Others :</label>
@@ -97,21 +97,21 @@ if (!empty($_SESSION["id"])) {
                 name="ret" required >
               </div>
               <div class="form-group">
-                <label  class ="label" for="image">Location:</label>
-                <input type="file" name="image" class="form-control" id="image" placeholder="" 
-                name="ret" required >
-              </div>
-          <button type="submit" name="submit" class="btn btn-primary">ADD</button></form>
-          <form action="DeleteUp.php" method="post">
-              <div class="form-group">
                 <label  class ="label" for="sl">Sl No:</label>
-                <input type="number" step="1" class="form-control" id="sl" placeholder="SL number for delete" 
+                <input type="number" class="form-control" id="sl" placeholder="SL number" 
                 name="sl" readonly>
               </div>
-        <button type="submit" class="btn btn-danger">Delete</button>
+              <div class="form-group">
+                <label  class ="label" for="image">Location:</label>
+                <input type="file" name="image" class="form-control" id="image" placeholder="" 
+                name="ret" >
+              </div>
+          <button type="submit" name="submit" class="btn btn-primary">Add</button>
+          <button type="submit" name="update" class="btn btn-success">Update</button>
+          <button type="submit" name="delete" class="btn btn-danger">Delete</button></form>
         
         
-        </form>
+      
         </div>
       </div>
       </div>

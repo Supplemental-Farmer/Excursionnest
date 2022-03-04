@@ -104,7 +104,9 @@ if (!empty($_SESSION["id"])) {
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
+                  
                 </div>
+                <h4>Trips#<b> <?php echo $row['NUM'] ?> </b> </h4><br>
 
                 <button style="margin-bottom: 10px;" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#mymodal<?php echo $row['NUM'] ?>">
                   Book Now
@@ -135,6 +137,15 @@ if (!empty($_SESSION["id"])) {
                                   <input type="number" min='1' class="form-control" id="person" placeholder="Enter Total Persons" name="person" required>
                                 </td>
                               </tr>
+                              <tr>
+                              <td>
+                                <label class="label" for="number">Trip#</label>
+                              </td>
+                              <td>
+                                <input type="number" value="<?php echo $row['NUM']; ?>" class="form-control" id="number"  name="number" readonly>
+                              </td>
+                              </tr>
+                              <tr>
                               <td>
                                 <label class="label" for="req1">Cost Per Person:</label>
                               </td>

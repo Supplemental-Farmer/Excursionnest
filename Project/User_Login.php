@@ -73,7 +73,7 @@ if(isset($_POST["submit"])){
                     <h2 align="center" style="color:crimson;" ><b>Login</b></h2>
                     </div>
                     <div align ="center">
-                        <form class="" action="" method="post" autocomplete="off">
+                        <form class="" action="" method="post">
                             <table align="center">
                                 <tr align="center">
                                     <td>

@@ -27,6 +27,15 @@ if (!empty($_SESSION["id"])) {
     <style>
       textarea {
   resize: none;
+      }
+      table tr{
+      cursor: pointer;
+      transition: all .25s ease-in-out;
+
+  }
+  table tr:hover{
+    background-color: darksalmon;
+  }
     </style>
 </head>
 <body>
@@ -97,9 +106,11 @@ if (!empty($_SESSION["id"])) {
               <div class="form-group">
                 <label  class ="label" for="sl">Sl No:</label>
                 <input type="number" step="1" class="form-control" id="sl" placeholder="SL number for delete" 
-                name="sl" >
+                name="sl" readonly>
               </div>
         <button type="submit" class="btn btn-danger">Delete</button>
+        
+        
         </form>
         </div>
       </div>
@@ -124,10 +135,10 @@ if (!empty($_SESSION["id"])) {
                 die("Connection failed: " . mysqli_connect_error()); 
             }
              
-            $sql = "SELECT * FROM upcoming"; 
+            $sql = "SELECT * FROM upcoming WHERE FLAG=0"; 
             $result = mysqli_query($conn, $sql); 
             echo "<h3 align='center'>Upcoming Possible Trips</h3>";
-            echo "<table align = 'Center' border=2px width=750px style= 'margin-top: 40px'>"; 
+            echo "<table id='table' align = 'Center' border=2px width=750px style= 'margin-top: 40px'>"; 
 
             echo "<tr height='20px' bgcolor='coral' align='center'>"; 
             echo "<td> <b>Serial No</b></td>
@@ -374,6 +385,21 @@ if (!empty($_SESSION["id"])) {
     ?>
             
           </div></div></div>
+          <script>
+            var table = document.getElementById('table');
+            for(var i=1;i<table.rows.length;i++){
+              table.rows[i].onclick = function(){
+                document.getElementById("sl").value = this.cells[0].innerHTML;
+                document.getElementById("def").value = this.cells[1].innerHTML;
+                document.getElementById("det").value = this.cells[2].innerHTML;
+                document.getElementById("des").value = this.cells[3].innerHTML;
+                document.getElementById("ret").value = this.cells[4].innerHTML;
+                document.getElementById("hotel").value = this.cells[5].innerHTML;
+                document.getElementById("cost").value = this.cells[6].innerHTML;
+                document.getElementById("other").value = this.cells[7].innerHTML;
+              }
+            }
+          </script>
 </body>
 </html> 
 

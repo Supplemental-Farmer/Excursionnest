@@ -103,9 +103,7 @@ if (!empty($_SESSION["id"])) {
                       </td>
                     </tr>
                   </table>
-                  <button type="submit" class="btn btn-danger" name="delete" style="margin-bottom :5px;">
-                    Cancel
-                  </button>
+                  
                 </form>
               </div>
 

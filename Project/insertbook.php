@@ -16,13 +16,18 @@
           $end = $_POST["date2"];
           $hotel = $_POST["req3"];
           $togo = $_POST["req7"];
-          $sql = "INSERT INTO booked (mail,p_name,phone,place,StartD,EndIng,HOTEL,Others, COST, PERSON) VALUES 
-				('$m', '$person','$number','$togo','$startd','$end','$hotel','$oth',$c,$p)";
-                
+          $numnew = $_POST["number"];
+          $sql = "INSERT INTO booked (mail,p_name,phone,place,StartD,EndIng,HOTEL,Others, COST, PERSON,NUM) VALUES 
+				('$m', '$person','$number','$togo','$startd','$end','$hotel','$oth',$c,$p,$numnew)";
+                error_reporting(0);
+                echo "<script>alert('Selected Trip has been booked already.')</script>";
+                echo("<script>window.location = 'Bookings.php';</script>");
                 if (mysqli_query($conn, $sql)) 
                 { 
                     header("location: Bookings.php");
                 } 
+
+                
             }
             mysqli_close($conn);
 

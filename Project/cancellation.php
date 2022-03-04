@@ -81,7 +81,7 @@ if (!empty($_SESSION["id"])) {
 
     <div class="row" style="justify-content: center;">
       <?php
-      $query = "SELECT * FROM booked where mail = '$m'";
+      $query = "SELECT * FROM booked where mail = '$m' AND CANCEL=0";
       $query_run = mysqli_query($conn, $query);
       $check = mysqli_num_rows($query_run) > 0;
       if ($check) {

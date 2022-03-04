@@ -50,11 +50,13 @@ else{
 }
 .label{
   font-size: 12px;
+  margin-top: 60px;
 }
+
 .card{
-  width: 400px;
+  width: auto;
   background-color: transparent; 
-  margin-top: 80px;
+  margin-top: 60px;
   box-shadow: 6px 8px 6px black;
 }
 </style>
@@ -73,12 +75,15 @@ else{
 
 <!-- Page content -->
 <div class="main">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" align="center">
+  <div class="box-container">
 <div class="jumbotron" style="margin-top: 30px;">
                 <a href="Home.php"><h6 align = "center" ><img src="Pictures/hosse.png" ></h6></a>
 <h2 class="glow" align="center" style="margin-top: 20px;">Welcome <?php echo $row["Name"] ?></h2>
-
+</div>
 <div class="row">
-  <div class="col" align="center">
+<div class="col-xs-0 col-sm-0 col-md-0 col-lg-4" align="center"></div>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-4" align="center">
   <div class="card">
                 
                 
@@ -91,125 +96,39 @@ else{
         if(mysqli_num_rows($new)>0){
           while($row = mysqli_fetch_array($new)){
             ?>
-            <table align="center">
-            <tr align="center">
-                <td>
-                <label class ="label" for="updatedmail">Mail:</label>
-                </td>
-                <td>
-                <input type="text" name="updatedmail" class="form-control" value="<?php echo $row["mail"] ;?>" readonly>  
-                </td>
-              </tr>
-              <tr align="center">
-                <td>
+            
+                <label class ="label" for="updatedmail" >Mail:</label>
+                
+                <input type="text" style="margin-bottom: 16px;margin-top: 5px;" name="updatedmail" class="form-control" value="<?php echo $row["mail"] ;?>" readonly>  
+                
                 <label class ="label" for="updatedname">Name:</label>
-                </td>
-                <td>
-                <input type="text" name="updatedname" class="form-control" value="<?php echo $row["Name"];?>" required>  
-                </td>
-              </tr>
-
-              <tr align="center">
-                <td>
+                
+                <input type="text" style="margin-bottom: 16px;margin-top: 5px;" name="updatedname" class="form-control" value="<?php echo $row["Name"];?>" required>  
+                
                 <label class ="label" for="updatednum">Phone:</label>
-                </td>
-                <td>
-                <input type="text" name="updatednum" class="form-control" value="<?php echo $row['Phone'];?>" required>
-                </td>
-              </tr>
-
-              <tr align="center">
-                <td>
+                
+                <input type="text" style="margin-bottom: 16px;margin-top: 5px;" name="updatednum" class="form-control" value="<?php echo $row['Phone'];?>" required>
+                
                 <label class ="label" for="updatedarea">Location:</label>
-                </td>
-                <td>
-        <input type="text" name="updatedarea" class="form-control" value="<?php echo $row['location'];?>" required>
-                </td>
-              </tr>
-
-              <tr align="center">
-                <td>
+              
+                <input type="text" style="margin-bottom: 16px;margin-top: 5px;" name="updatedarea" class="form-control" value="<?php echo $row['location'];?>" required>
+                
                 <label class ="label" for="updatedpass">Password:</label>
-                </td>
-                <td>
-                <input type="password" name="updatedpass" class="form-control" value="<?php echo $row['password'];?>" required>
-                </td>
-              </tr>
-      
-
-      
-        
-      </table>
-      <input type="submit" name="update" class="btn btn-info btn-lg" style="margin-top: 20px;margin-bottom: 10px;" value="Update">
+                
+                
+                <input type="password" style="margin-bottom: 16px;margin-top: 5px;" name="updatedpass" class="form-control" value="<?php echo $row['password'];?>" required>
+                
+                <input type="submit" name="update" class="btn btn-info btn-lg" style="margin-top: 20px;margin-bottom: 10px;" value="Update">
             <?php
             
           }
         }
       ?>
-      <!-- <div class="form-group">
-        <input type="text" name="updatedname" class="form-control" value="">
-      </div>
-      <div class="form-group">
-        <input type="email" name="updatedmail" class="form-control" value="">
-      </div>
-      <div class="form-group">
-        <input type="text" name="updatednum" class="form-control" value="">
-      </div>
-      <div class="form-group">
-        <input type="text" name="updatedarea" class="form-control" value="">
-      </div>
-      <div class="form-group">
-        <input type="password" name="updatedpass" class="form-control" value="">
-      </div>
-
-      <div class="form-group">
-        <input type="submit" name="update" class="btn btn-info" value="Update">
-      </div> -->
 
     </form>
     </div>
   </div>
 </div></div>
-
-<!-- <div class="container">
-  
-        <ul class="nav nav-tabs">
-          <li class="active"><a data-toggle="tab" href="#home"><i class="fa fa-user-circle"></i> User Profile</a></li>
-            <li><a data-toggle="tab" href="#menu0"><i class="fa fa-location-arrow"></i> Booking</a></li>
-          <li><a data-toggle="tab" href="#menu1"><i class="fa fa-ban"></i> Cancellation</a></li>
-          <li><a data-toggle="tab" href="#menu2"><i class="fa fa-history"></i> History</a></li>
-          <li><a data-toggle="tab" href="#menu3"><i class="fa fa-commenting"></i> Messages</a></li>
-        </ul>
-        
-        <div class="tab-content">
-        <div id="home" class="tab-pane fade in active">
-            <h3 align='center'>User Profile</h3>
-            
-          </div>
-
-      <div id="menu0" class="tab-pane fade">
-            <h3 align='center'>Bookings</h3>
-            
-          </div>
-          <div id="menu1" class="tab-pane fade">
-            <h3 align='center'>Cancellations</h3>
-            
-          </div>
-          <div id="menu2" class="tab-pane fade">
-            <h3 align='center'>History</h3>
-            
-          </div>
-          <div id="menu3" class="tab-pane fade">
-            <h3 align='center'>Messages</h3>
-            
-          </div></div></div> -->
-
-
-        </div>
-
-          
-        
-
-    
+        </div> </div>
 </body>
 </html>

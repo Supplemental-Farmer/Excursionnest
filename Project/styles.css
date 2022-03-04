@@ -10,14 +10,7 @@ body{
 .container {
     background-color:transparent !important;
 }
-.form-control{
-    width: fit-content;
-    margin-top: 10px;
-  
-}
-.label{
-   text-emphasis-color: brown;
-} 
+ 
 .jumbotron{
     position: relative;
     top: 0px;

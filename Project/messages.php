@@ -44,7 +44,7 @@ else{
 }
 
     .label {
-
+      
       color: black;
       font-size: 12px;
     }
@@ -104,7 +104,6 @@ else{
                           <label class="label" for="msg">Message:</label>
                           </td>
                           <td>
-                          <!-- <input type="text" class="form-control" id="msg" placeholder="(If Any....)" name="msg"> -->
                           <textarea class="form-control" rows="5" id="msg" name="msg"></textarea>
                           </td>
                          </tr>

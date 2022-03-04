@@ -38,23 +38,20 @@ else{
                     }
         }
     }
-    if(isset($_POST['delete'])){
+    if (isset($_POST['delete'])) {
         $n = $_POST["sl"];
-    $sql = "DELETE FROM upcoming WHERE NUM = $n";
-    $sql2 = "DELETE FROM booked WHERE NUM = $n";
-                
-                if (mysqli_query($conn, $sql)) 
-                { 
-                    if (mysqli_query($conn, $sql2))
-                    {
-                        header('location: admin_profile.php');
-                    }
-                    
+        $sql = "DELETE FROM upcoming WHERE NUM = $n";
+        $sql2 = "DELETE FROM booked WHERE NUM = $n";
+
+        if (mysqli_query($conn, $sql)) {
+            if (mysqli_query($conn, $sql2)) {
+                header('location: admin_profile.php');
+            }
+        }
+    }
 }
-}
-}
-            
-            
-            mysqli_close($conn);
+
+
+mysqli_close($conn);
 
 ?>

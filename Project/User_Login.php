@@ -90,14 +90,7 @@ if(isset($_POST["submit"])){
                                     </td>
                                     </tr>
                             </table>
-                            <!-- <div class="form-group">
-                                <label class ="label" for="mail">E-mail:</label>
-                                <input type="text" class="form-control" id="mail" placeholder="Registered Mail" name="mail" height="10px" required >
-                              </div> -->
-                              <!-- <div class="form-group">
-                                <label  class ="label" for="phone">Password:</label>
-                                <input type="password" class="form-control" id="pass" height="10px" placeholder="Password" name="pass" required >
-                              </div> -->
+                           
                               <div class="checkbox" style="padding: 5px;">
                                 <label style="color:red;"><input type="checkbox" name="remember"> Remember me</label>
                               </div>

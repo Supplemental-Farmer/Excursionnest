@@ -27,12 +27,13 @@ if (!empty($_SESSION["id"])) {
   <link rel="stylesheet" type="text/css" href="styles.css">
   <style>
     .card {
-      background-image: linear-gradient(lightsalmon, lightgreen);
+      border-radius: 8%;
+      background-image: linear-gradient(pink,rebeccapurple);
       box-shadow: 6px 8px 6px black;
     }
 
     .card:hover {
-      box-shadow: 6px 12px 6px lightsalmon;
+      box-shadow: 6px 12px 6px pink;
     }
 
     .form-control {
@@ -73,7 +74,7 @@ if (!empty($_SESSION["id"])) {
 
   <!-- Page content -->
   <div class="main">
-    <h1 class="glow" align="center" style="margin-top: 50px;">Memories</h1>
+    <h1 class="glow" align="center" style="margin: 50px;">Memories</h1>
     <?php
     $query = "SELECT * FROM booked where mail = '$m' AND FLAG=1";
     $query_run = mysqli_query($conn, $query);

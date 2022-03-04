@@ -106,7 +106,7 @@ if (!empty($_SESSION["id"])) {
                   <i class="fas fa-star"></i>
                   
                 </div>
-                <h4>Trips#<b> <?php echo $row['NUM'] ?> </b> </h4><br>
+                <h4>Trip#<b> <?php echo $row['NUM'] ?> </b> </h4><br>
 
                 <button style="margin-bottom: 10px;" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#mymodal<?php echo $row['NUM'] ?>">
                   Book Now

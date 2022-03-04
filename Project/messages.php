@@ -58,7 +58,7 @@ else{
 }
     </style>
 </head>
-<body>
+<body style="font-size: 20px;">
 <div class="sidenav">
 <ul class="nav nav-tabs">
   <li ><a  class= "nav-link" href="profile.php"><i class="fa fa-user-circle"></i> User Profile</a></li>
@@ -86,7 +86,7 @@ else{
                             <label class="label" for="mail">Email:</label>
                           </td>
                           <td>
-                            <input type="text" value="<?php echo $row['mail']; ?>" class="form-control" id="mail" name="mail" readonly>
+                            <input type="text" style="font-size: 14px;" value="<?php echo $row['mail']; ?>" class="form-control" id="mail" name="mail" readonly>
                           </td>
                           </tr>
 
@@ -95,7 +95,7 @@ else{
                             <label class="label" for="name">Name:</label>
                           </td>
                           <td>
-                            <input type="text" value="<?php echo $row['Name']; ?>" class="form-control" id="name" name="name" readonly>
+                            <input type="text" style="font-size: 14px;" value="<?php echo $row['Name']; ?>" class="form-control" id="name" name="name" readonly>
                           </td>
                           </tr>
 
@@ -104,7 +104,7 @@ else{
                           <label class="label" for="msg">Message:</label>
                           </td>
                           <td>
-                          <textarea class="form-control" rows="5" id="msg" name="msg"></textarea>
+                          <textarea class="form-control" style="font-size: 15px;" rows="5" id="msg" name="msg" required></textarea>
                           </td>
                          </tr>
 
@@ -125,13 +125,15 @@ else{
 
                       <!-- Modal Header -->
                       <div class="modal-header">
+                      <h2>Message From Admin</h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        
                       </div>
 
                       <!-- Modal body -->
                       <div class="modal-body">
                         <div>
-                        <?php echo $row['rep'] ?>
+                        <h3> <?php echo $row['rep'] ?> </h3>
                         </div>
                       </div>
 

@@ -37,6 +37,10 @@ if (!empty($_SESSION["id"])) {
     .card:hover {
       box-shadow: 6px 12px 6px aqua;
     }
+    .form-control{
+    width: fit-content;
+    margin-top: 10px;
+}
 
     .label {
 
@@ -87,7 +91,7 @@ if (!empty($_SESSION["id"])) {
     if ($check) {
       while ($row = mysqli_fetch_assoc($query_run)) {
     ?>
-        <div class="col-md-3">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
           <div class="box-container">
             <div class="card" style="margin-bottom: 15px;">
               <img src="<?php echo $row['Pic'] ?>" height="200px" alt="" style="border-radius: 5%;">

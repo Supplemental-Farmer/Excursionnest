@@ -1,11 +1,11 @@
 <?php
 $conn = mysqli_connect("localhost", "root", "", "excursionnest");
 
-$query = "UPDATE upcoming SET FLAG=1 WHERE StartD < CURDATE()";
+$query = "UPDATE upcoming SET FLAG=1 WHERE StartD <= CURDATE()";
 mysqli_query($conn, $query);
 $query1 = "UPDATE booked SET FLAG=1 WHERE EndIng < CURDATE()";
 mysqli_query($conn, $query1);
-$query2 = "UPDATE booked SET CANCEL=1 WHERE StartD < CURDATE()";
+$query2 = "UPDATE booked SET CANCEL=1 WHERE StartD <= CURDATE()";
 mysqli_query($conn, $query2);
 
 ?>

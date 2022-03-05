@@ -47,7 +47,10 @@ else{
   border-width: 5px;
   border-color: lightgreen;
   font-size: 15px;
+  width: fit-content;
+  margin-top: 10px;
 }
+
 .label{
   font-size: 12px;
   margin-top: 60px;

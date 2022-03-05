@@ -53,6 +53,10 @@ else{
       background-color:transparent !important;
       box-shadow: 6px 12px 6px black;
     }
+    .form-control{
+    width: fit-content;
+    margin-top: 10px;
+  }
     textarea {
   resize: none;
 }

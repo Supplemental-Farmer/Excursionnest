@@ -50,6 +50,7 @@ if (!empty($_SESSION["id"])) {
         <ul class="nav nav-tabs">
           <li class="active"><a data-toggle="tab" href="#home"><i class="fa fa-location-arrow"></i> Upcoming Trips</a></li>
           <li><a data-toggle="tab" href="#menu1"><i class="fa fa-globe"></i> Previous Trips</a></li>
+          <li><a data-toggle="tab" href="#menu28"><i class="fa fa-user-circle"></i> Booked by Clients</a></li>
           <li><a data-toggle="tab" href="#menu2"><i class="fa fa-users"></i> Clients</a></li>
           <li><a data-toggle="tab" href="#menu3"><i class="fa fa-commenting"></i> Messages</a></li>
         </ul>
@@ -234,6 +235,82 @@ if (!empty($_SESSION["id"])) {
                      echo "<td>" . $row['StartP'] . "</td>"; 
                      echo "<td>" . $row['StartD'] . "</td>"; 
                      echo "<td>" . $row['togo'] . "</td>";  
+                     echo "<td>" . $row['EndIng'] . "</td>"; 
+                     echo "<td>" . $row['HOTEL'] . "</td>"; 
+                     echo "<td>" . $row['COST'] . "</td>"; 
+                     echo "<td>" . $row['Others'] . "</td>";   
+                     echo "</tr>"; 
+                 } 
+            } 
+            else 
+            { 
+                echo "0 results"; 
+            } 
+            echo "</table>"; 
+ 
+	
+           ?>      
+
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+
+      <div id="menu28" class="tab-pane fade">
+        <div class="row ">
+        
+      
+      
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+      <div class="card">
+      <div align='center'>
+      <?php
+        error_reporting(0);
+        $servername = "localhost"; 
+        $username = "root"; 
+        $password = "";
+        $dbname = "excursionnest"; 
+
+        // Create connection 
+        $conn = mysqli_connect($servername, $username, $password, $dbname); 
+        // Check connection 
+        if(!$conn) 
+            { 
+                die("Connection failed: " . mysqli_connect_error()); 
+            } 
+            $sql = "SELECT * FROM booked WHERE FLAG=0 AND CANCEL=0"; 
+            $result = mysqli_query($conn, $sql); 
+            
+            echo "<h2 align='center'>Trips Booked by Clients</h2>";
+            echo "<table align = 'Center' border=2px width=1050px style= 'margin-top: 40px'>"; 
+
+            echo "<tr height='20px' bgcolor='coral' align='center'>"; 
+            echo "<td> <b>Mail</b></td>
+            <td> <b>Client's Name</b></td>
+            <td> <b>Phone</b></td>
+            <td> <b>Trip Detail</b></td>
+            <td> <b>Departure Time</b></td>
+            <td> <b>Return Time</b></td>
+            <td> <b>Hotel Name</b></td>
+            <td> <b>Cost</b></td>
+            <td> <b>Others</b></td>"; 
+            echo "</tr>";
+
+
+    
+            if (mysqli_num_rows($result) > 0) 
+            { 
+                 // output data of each row 
+                 while($row = mysqli_fetch_assoc($result)) 
+                 { 
+                    
+                     echo "<tr height='20px' bgcolor='wheat' align='center'>"; 
+                     echo "<td>" . $row['mail'] . "</td>";
+                     echo "<td>" . $row['p_name'] . "</td>"; 
+                     echo "<td>" . $row['phone'] . "</td>";
+                     echo "<td>" . $row['place'] . "</td>";
+                     echo "<td>" . $row['StartD'] . "</td>";  
                      echo "<td>" . $row['EndIng'] . "</td>"; 
                      echo "<td>" . $row['HOTEL'] . "</td>"; 
                      echo "<td>" . $row['COST'] . "</td>"; 
